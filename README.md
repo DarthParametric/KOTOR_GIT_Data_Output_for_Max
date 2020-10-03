@@ -1,5 +1,5 @@
 # KOTOR GIT Data Output for Max
-This is a simple script that will derive the relevant data from an object (or objects) in 3DS Max/GMax needed to be added to a GIT when creating a new static camera, placeable, or creature entries for KOTOR and output it to Listener window. 
+This is a simple script that will derive the relevant data from an object (or objects) in 3DS Max/GMax needed to be added to a GIT when creating new static camera, placeable, or creature entries for KOTOR and output it to Listener window. 
 
 Instructions
 ============
