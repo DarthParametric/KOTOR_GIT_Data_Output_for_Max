@@ -27,4 +27,4 @@ Acknowledgements
 * Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100) by martinB.
 * Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions.
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
-* Extension of the script from static camera values to include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
+* Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
