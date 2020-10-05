@@ -24,8 +24,9 @@ xRot = obj.rotation.X_rotation -- Object X orientation.
 yRot = obj.rotation.Y_rotation -- Object Y orientation.
 zRot = obj.rotation.Z_rotation -- Object Z orientation.
 zRads = degToRad zRot -- Derive Z rotation in radians for placeable bearing.
-zCos = cos (radToDeg zRot) -- Derive creature XOrientation. Despite the help page saying trig functions work in degrees, they use radians, so force back to degrees.
-zSin = sin (radToDeg zRot) -- Derive creature YOrientation.
+zRotKTR = zRot + 90 -- Since most KOTOR modules use East as 0 degrees, we need to add an extra 90 degrees to calculate certain in-engine facings.
+zCos = cos zRotKTR -- Derive creature XOrientation (cosine of adjusted rotation in radians).
+zSin = sin zRotKTR -- Derive creature YOrientation (sine of adjusted rotation in radians).
 local zRot2
 if zRot < 0 then zRot2 = abs zRot else zRot2 = 0 - zRot -- To account for apparent sign flipping, flip the sign before converting to a quat.
 objzRot = eulerAngles 0 0 zRot2 -- Create a dummy rotation with zeroed out X and Y values.
@@ -34,20 +35,26 @@ quatW = objzRot2.w -- Separate out quaternion components to reorder as WXYZ (Max
 quatX = objzRot2.x
 quatY = objzRot2.y
 quatZ = objzRot2.z
-format "=================================================\n"
+format "===================================================\n"
 format "Object data formatted for KOTOR GIT injection\n"
-format "-------------------- GENERIC --------------------\n"
+format "--------------------- GENERIC ---------------------\n"
 format "SELECTED OBJECT: %\n" objName
 format "POSITION (in metres): %, %, %\n" (toMetres objPos.x) (toMetres objPos.y) (toMetres objPos.z) -- Use unit conversion function to ensure position is in metres regardless of system units.
 format "ROTATION (in degrees): %, %, %\n" xRot yRot zRot
-format "----------------- STATIC CAMERA -----------------\n"
+format "------------------ STATIC CAMERA ------------------\n"
 format "PITCH (X rotation in degrees): %\n" xRot
 format "ORIENTATION (Z rotation as a WXYZ quaternion):\n%, %, %, %\n" quatW quatX quatY quatZ
-format "------------------- PLACEABLE -------------------\n"
+format "-------------------- PLACEABLE --------------------\n"
 format "BEARING (Z rotation in radians): %\n" zRads
-format "------------------- CREATURE --------------------\n"
-format "X ORIENTATION ( COS(Z°) ): %\n" zCos
-format "Y ORIENTATION ( SIN(Z°) ): %\n" zSin
-format "=================================================\n"
+format "------------------- SCRIPTING * -------------------\n"
+format "FACING: (Z rotation + 90°): %\n" zRotKTR
+format "-------------------- CREATURE * -------------------\n"
+format "X ORIENTATION ( COS(Z + 90°) ): %\n" zCos
+format "Y ORIENTATION ( SIN(Z + 90°) ): %\n" zSin
+format "---------------------- NOTES ----------------------\n"
+format "Warning: Sections marked * assume that the module\n"
+format "uses East as 0°. For a handful of modules this will\n"
+format "result in incorrect values. See readme for details.\n"
+format "===================================================\n"
 format "\n"
 )
