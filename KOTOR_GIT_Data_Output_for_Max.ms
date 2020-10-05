@@ -46,9 +46,9 @@ format "PITCH (X rotation in degrees): %\n" xRot
 format "ORIENTATION (Z rotation as a WXYZ quaternion):\n%, %, %, %\n" quatW quatX quatY quatZ
 format "-------------------- PLACEABLE --------------------\n"
 format "BEARING (Z rotation in radians): %\n" zRads
-format "------------------- SCRIPTING * -------------------\n"
+format "-------------------- SCRIPTING --------------------\n"
 format "FACING: (Z rotation + 90°): %\n" zRotKTR
-format "-------------------- CREATURE * -------------------\n"
+format "-------------------- CREATURE ---------------------\n"
 format "X ORIENTATION ( COS(Z + 90°) ): %\n" zCos
 format "Y ORIENTATION ( SIN(Z + 90°) ): %\n" zSin
 format "---------------------- NOTES ----------------------\n" -- Add notice about potential confusion due to module map orientation.
