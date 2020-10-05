@@ -52,9 +52,11 @@ format "-------------------- CREATURE * -------------------\n"
 format "X ORIENTATION ( COS(Z + 90°) ): %\n" zCos
 format "Y ORIENTATION ( SIN(Z + 90°) ): %\n" zSin
 format "---------------------- NOTES ----------------------\n"
-format "Warning: Sections marked * assume that the module\n"
-format "uses East as 0°. For a handful of modules this will\n"
-format "result in incorrect values. See readme for details.\n"
+format "N.B.: The Endar Spire (and possibly other modules)\n"
+format "rotate the in-game map so that north doesn't match\n"
+format "Max's north. This may cause confusion when trying to\n"
+format "determine the required orientation. See the readme\n"
+format "for further details.\n"
 format "===================================================\n"
 format "\n"
 )
