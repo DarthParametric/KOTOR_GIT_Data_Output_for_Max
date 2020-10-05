@@ -8,18 +8,22 @@ Download the script and put it in your Scripts folder, or some other convenient 
 =================================================
 Object data formatted for KOTOR GIT injection
 -------------------- GENERIC --------------------
-SELECTED OBJECT: TestObject01
-POSITION (in metres): -10.629, 2.145, 1.56
-ROTATION (in degrees): 84.5, 0.0, 85.217
+SELECTED OBJECT: PMBIM
+POSITION (in metres): 106.526, 33.619, 4.21
+ROTATION (in degrees): 0.0, 0.0, 112.5
 ----------------- STATIC CAMERA -----------------
-PITCH (X rotation in degrees): 84.5
+PITCH (X rotation in degrees): 0.0
 ORIENTATION (Z rotation as a WXYZ quaternion):
-0.735997, 0.0, 0.0, 0.676985
+0.55557, 0.0, 0.0, 0.83147
 ------------------- PLACEABLE -------------------
-BEARING (Z rotation in radians): 1.48732
+BEARING (Z rotation in radians): 1.9635
+------------------- SCRIPTING -------------------
+FACING: (Z rotation + 90°): 202.5
 ------------------- CREATURE --------------------
-X ORIENTATION ( COS(Z°) ): -0.923378
-Y ORIENTATION ( SIN(Z°) ): -0.383893
+X ORIENTATION ( COS(Z + 90°) ): -0.92388
+Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
+Warning: Assumes module uses East as 0°.
+Will be incorrect for certain modules.
 =================================================
 ```
 Acknowledgements
