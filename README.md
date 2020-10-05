@@ -23,11 +23,17 @@ FACING: (Z rotation + 90°): 202.5
 X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ---------------------- NOTES ----------------------
-Warning: Sections marked * assume that the module
-uses East as 0°. For a handful of modules this will
-result in incorrect values. See readme for details.
+N.B.: The Endar Spire (and possibly other modules)
+rotate the in-game map so that north doesn't match
+Max's north. This may cause confusion when trying to
+determine the required orientation. See the readme
+for further details.
 ===================================================
 ```
+Notes
+============
+At least two modules, the Endar Spire's end_m01aa (Command Module) and end_m01ab (Starboard Section), rotate the in-game map differently than the majority of other modules. Typically the game takes East as 0°, thus requiring the addition of 90° to certain rotations. However, these two modules rotate the in-game map so that in-game North is actually West in Max, while still taking Max East as 0°. Thus to face North would require a scripted facing of 180° in these modules, not 90° as would typically be the case. Generally this shouldn't pose an issue when working exclusively in Max, but users should be cognizant of it when testing in-game.
+
 Acknowledgements
 ============
 * Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100) by martinB.
