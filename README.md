@@ -5,26 +5,28 @@ Instructions
 ============
 Download the script and put it in your Scripts folder, or some other convenient location. In Max, select the object/s of interest, hit F11 to open the Listener window, then hit CTRL+R or go to File -> Run Script and select KOTOR_GIT_Data_Output_for_Max.ms and hit enter. You should get an output something like the following:
 ```
-=================================================
+===================================================
 Object data formatted for KOTOR GIT injection
--------------------- GENERIC --------------------
+--------------------- GENERIC ---------------------
 SELECTED OBJECT: PMBIM
 POSITION (in metres): 106.526, 33.619, 4.21
 ROTATION (in degrees): 0.0, 0.0, 112.5
------------------ STATIC CAMERA -----------------
+------------------ STATIC CAMERA ------------------
 PITCH (X rotation in degrees): 0.0
 ORIENTATION (Z rotation as a WXYZ quaternion):
 0.55557, 0.0, 0.0, 0.83147
-------------------- PLACEABLE -------------------
+-------------------- PLACEABLE --------------------
 BEARING (Z rotation in radians): 1.9635
-------------------- SCRIPTING -------------------
+------------------- SCRIPTING * -------------------
 FACING: (Z rotation + 90°): 202.5
-------------------- CREATURE --------------------
+-------------------- CREATURE * -------------------
 X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
-Warning: Assumes module uses East as 0°.
-Will be incorrect for certain modules.
-=================================================
+---------------------- NOTES ----------------------
+Warning: Sections marked * assume that the module
+uses East as 0°. For a handful of modules this will
+result in incorrect values. See readme for details.
+===================================================
 ```
 Acknowledgements
 ============
