@@ -32,7 +32,7 @@ readme for further details.
 ```
 Notes
 ============
-At least two modules, the Endar Spire's end_m01aa (Command Module) and end_m01ab (Starboard Section), rotate the in-game map differently than the majority of other modules. Typically the game takes East as 0°, thus requiring the addition of 90° to certain rotations. However, these two modules rotate the in-game map so that in-game North is actually West in Max, while still taking Max East as 0°. Thus to face North would require a scripted facing of 180° in these modules, not 90° as would typically be the case. Generally this shouldn't pose an issue when working exclusively in Max, but users should be cognizant of it when testing in-game.
+Several modules across both games, notably the Endar Spire's end_m01aa (Command Module) and end_m01ab (Starboard Section) in K1 and the Harbinger's 151HAR (Command Deck) and 152HAR (Crew Quarters) in TSL, rotate the in-game map differently than the majority of other modules. The game takes Max's East as 0°, thus requiring the addition of 90° to certain rotations. However, these modules rotate the in-game map so that in-game North no longer matches North in Max, while still taking Max East as 0°. Thus to face North in these modules would require something other than the typical 90° used in other modules. Generally this shouldn't pose an issue when working exclusively in Max, but users should be cognizant of it when testing in-game.
 
 Acknowledgements
 ============
