@@ -25,9 +25,9 @@ Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ---------------------- NOTES ----------------------
 N.B.: The Endar Spire (and possibly other modules)
 rotate the in-game map so that north doesn't match
-Max's north. This may cause confusion when trying to
-determine the required orientation. See the readme
-for further details.
+Max's north. This may cause confusion when trying
+to determine the required orientation. Refer to the
+readme for further details.
 ===================================================
 ```
 Notes
