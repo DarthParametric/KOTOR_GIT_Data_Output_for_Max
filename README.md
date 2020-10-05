@@ -17,9 +17,9 @@ ORIENTATION (Z rotation as a WXYZ quaternion):
 0.55557, 0.0, 0.0, 0.83147
 -------------------- PLACEABLE --------------------
 BEARING (Z rotation in radians): 1.9635
-------------------- SCRIPTING * -------------------
+-------------------- SCRIPTING --------------------
 FACING: (Z rotation + 90°): 202.5
--------------------- CREATURE * -------------------
+-------------------- CREATURE ---------------------
 X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ---------------------- NOTES ----------------------
