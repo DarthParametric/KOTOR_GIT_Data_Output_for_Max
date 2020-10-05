@@ -34,3 +34,4 @@ Acknowledgements
 * Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions.
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
+* Useful information regarding using trig functions to reverse-engineer Odyssey's X/Y Orientation values derived from [several posts by Vriff](https://deadlystream.com/topic/2901-gitedit-what-do-you-guys-want/?do=findComment&comment=29621) on Deadly Stream.
