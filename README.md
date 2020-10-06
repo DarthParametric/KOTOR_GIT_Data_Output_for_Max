@@ -22,12 +22,6 @@ FACING: (Z rotation + 90°): 202.5
 -------------------- CREATURE ---------------------
 X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
----------------------- NOTES ----------------------
-N.B.: Some modules rotate the in-game map so that
-north doesn't match Max's north, as is usually the
-case. Trying to determine the required orientation
-in-game may result in some confusion in these cases.
-Refer to the readme for further details.
 ===================================================
 ```
 If you also want to create triggers, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner. This will output the vertex offsets from the parent pivot for the selected object/s. It will skip any object with more than 10 verts (triggers typically only have 4 or 5 verts). You should get an output something like the following:
