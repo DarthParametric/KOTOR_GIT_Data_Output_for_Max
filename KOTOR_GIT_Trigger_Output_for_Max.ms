@@ -26,6 +26,8 @@ fn roundFloat val dp = (
 	return a
 )
 
+global vertLimit = 10 -- This is max number of verts the script will address. Objects with a higher vert count will be skipped. Adjust as needed but use high values at your own risk.
+
 for obj in selection do (
 	
 	objName = obj.name -- Selected object's name.
@@ -42,8 +44,30 @@ for obj in selection do (
 	format "POSITION (in metres): %, %, %\n" (toMetres objPos.x) (toMetres objPos.y) (roundFloat (toMetres objPos.z) 5) -- Use unit conversion function to ensure position is in metres regardless of system units.
 	format "----------------- VERTEX OFFSETS ------------------\n"
 	
-    if vertCount > 10 do -- Skip any mesh with more than 10 verts to prevent excessive memory use, since a trigger usually only needs 4.
+    if vertCount > vertLimit then -- Skip any mesh with more than 10 verts (by default) to prevent excessive memory use, since a trigger usually only needs 4.
 		(
+			format "Mesh has more than % verts, skipping.\n" vertLimit
+		)
+		else 
+			(
+				for v = 1 to vertCount do -- For anything else, loop through all vertices.
+					(
+						vert = getVert objTrigger v -- Get the v-th vertex.
+						vertX = vert.x - objPos.x -- Derive vert's X offset from object pivot
+						vertY = vert.y - objPos.y -- Derive vert's Y offset from object pivot
+						vertZ = vert.z - objPos.z -- Derive vert's Z offset from object pivot
+						
+						-- Output position for the selected vertex in metres. Since GMax apparently has less float precision than modern Max, cap values to 5 decimal places to eliminate unwieldy exponentials.
+						format "Vert %: %, %, %\n" v (roundFloat (toMetres vertX) 5) (roundFloat (toMetres vertY) 5) (roundFloat (toMetres vertZ) 5)
+					)
+			)
+	
+	delete objTrigger
+	
+	format "===================================================\n"
+	format "\n"
+)
+
 			format "Mesh has more than 10 verts, skipping.\n"
 		)
 
