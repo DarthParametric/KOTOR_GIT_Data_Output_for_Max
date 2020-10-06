@@ -43,7 +43,7 @@ If you would like to recreate creature or waypoint positioning inside Max using 
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
 
-Hit the OK button and the conversion results will be output to the Listener window. You should get an output something like the following:
+Note that in Max the text fields are filtered to prevent the entry of extraneous characters, but this feature is disabled for GMax. Hit the OK button and the conversion results will be output to the Listener window. You should get an output something like the following:
 ```
 ===================================================
 KOTOR GIT X\Y Orientation Converter for Max
@@ -69,3 +69,4 @@ Acknowledgements
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
 * Useful information regarding using trig functions to reverse-engineer Odyssey's X/Y Orientation values derived from [several posts by Vriff](https://deadlystream.com/topic/2901-gitedit-what-do-you-guys-want/?do=findComment&comment=29621) on Deadly Stream.
+* Max version check idea taken from [KOTORMax](https://deadlystream.com/files/file/1151-kotormax/) by bead-v.
