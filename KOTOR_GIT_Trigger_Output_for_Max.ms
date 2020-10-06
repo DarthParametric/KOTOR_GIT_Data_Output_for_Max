@@ -37,8 +37,9 @@ for obj in selection do (
 	
 	format "===================================================\n"
 	format "Trigger data formatted for KOTOR GIT injection\n"
-	format "\n"
+	format "---------------------------------------------------\n"
 	format "SELECTED OBJECT: %\n" objName
+	format "POSITION (in metres): %, %, %\n" (toMetres objPos.x) (toMetres objPos.y) (roundFloat (toMetres objPos.z) 5) -- Use unit conversion function to ensure position is in metres regardless of system units.
 	format "----------------- VERTEX OFFSETS ------------------\n"
 	
     if vertCount > 10 do -- Skip any mesh with more than 10 verts to prevent excessive memory use, since a trigger usually only needs 4.
