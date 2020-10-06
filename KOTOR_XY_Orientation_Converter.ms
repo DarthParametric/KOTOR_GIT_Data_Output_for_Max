@@ -1,7 +1,7 @@
 /***=========================================================
 	KOTOR GIT X\Y Orientation Converter for Max
 	
-	A script for Max/GMax that will take a user-entered	X/Y
+	A script for Max/GMax that will take a user-entered X/Y
 	Orientation from a KOTOR GIT file and convert it into a
 	valid Euler orientation for use in Max.
 	
@@ -31,6 +31,8 @@ fn FilterNumbers t = (
 	return t
 )
 
+global maxCheck = (maxversion())[1]
+
 rollout kOriPanel "KOTOR X/Y Orientation Converter" ( -- Create orientation entry rollout.
 	edittext fieldXOri "XOrientation:" fieldWidth:200 labelOnTop:true
 	edittext fieldYOri "YOrientation:" fieldWidth:200 labelOnTop:true
@@ -39,12 +41,18 @@ rollout kOriPanel "KOTOR X/Y Orientation Converter" ( -- Create orientation entr
 	
 	on fieldXOri changed t do -- Prevent non-numerical values being entered into the textbox.
 		(
-			fieldXOri.text = filterNumbers t
+			if maxCheck > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max
+			(
+				fieldXOri.text = filterNumbers t
+			)
 		)
 	
 	on fieldYOri changed t do -- Prevent non-numerical values being entered into the textbox.
 		(
-			fieldYOri.text = filterNumbers t
+			if maxCheck > 4200 then
+			(
+				fieldYOri.text = filterNumbers t
+			)
 		)
 	
 	on btCanOri pressed do
