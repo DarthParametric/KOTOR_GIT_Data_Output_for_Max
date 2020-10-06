@@ -39,7 +39,7 @@ Vert 4: 0.85827, 0.42217, 0.0
 ===================================================
 ```
 
-If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run x, as above. A pop-window will allow you to enter the values:
+If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run KOTOR_XY_Orientation_Converter.ms, as above. A pop-window will allow you to enter the values:
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
 
