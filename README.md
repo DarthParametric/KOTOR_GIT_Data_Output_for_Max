@@ -39,14 +39,32 @@ Vert 4: 0.85827, 0.42217, 0.0
 ===================================================
 ```
 
+If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run x, as above. A pop-window will allow you to enter the values:
+
+![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
+
+Hit the OK button and the conversion results will be output to the Listener window. You should get an output something like the following:
+```
+===================================================
+KOTOR GIT X\Y Orientation Converter for Max
+---------------------------------------------------
+X ORIENTATION: -0.923883
+Y ORIENTATION: -0.382674
+------------------- CONVERSION --------------------
+IN-GAME FACING (in °): 202.499
+MAX Z ORIENTATION (in °): 112.499
+===================================================
+```
+
 Notes
 ============
 Several modules across both games, notably the Endar Spire's end_m01aa (Command Module) and end_m01ab (Starboard Section) in K1 and the Harbinger's 151HAR (Command Deck) and 152HAR (Crew Quarters) in TSL, rotate the in-game map differently than the majority of other modules. The game takes Max's East as 0°, thus requiring the addition of 90° to certain rotations. However, these modules rotate the in-game map so that in-game North no longer matches North in Max, while still taking Max East as 0°. Thus to face North in these modules would require something other than the typical 90° used in other modules. Generally this shouldn't pose an issue when working exclusively in Max, but users should be cognizant of it when testing in-game, especially when using player postioning/facing as a guide.
 
 Acknowledgements
 ============
-* Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100) by martinB.
+* Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100/2) by martinB.
 * Float rounding function taken from a [Scriptspot post](http://www.scriptspot.com/forums/3ds-max/general-scripting/printing-out-float-values-to-a-few-decimal-points) by Guessmyname.
+* Bad characters filter function taken from a [CG Society forum post](https://forums.cgsociety.org/t/limit-an-edit-box-to-integer-float-value/1299552/3) by thatoneguy.
 * Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions and the Byzantine inner workings of the Odyssey engine.
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
