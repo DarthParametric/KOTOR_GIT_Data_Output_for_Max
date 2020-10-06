@@ -34,8 +34,9 @@ If you also want to create triggers, download the second script, KOTOR_GIT_Trigg
 ```
 ===================================================
 Trigger data formatted for KOTOR GIT injection
-
+---------------------------------------------------
 SELECTED OBJECT: Trigger01
+POSITION (in metres): -1.45, 3.85, 2.0
 ----------------- VERTEX OFFSETS ------------------
 Vert 1: -0.85827, -0.42217, 0.0
 Vert 2: 0.85827, -0.42217, 0.0
