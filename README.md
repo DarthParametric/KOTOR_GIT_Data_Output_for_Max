@@ -48,11 +48,11 @@ Note that in Max the text fields are filtered to prevent the entry of extraneous
 ===================================================
 KOTOR GIT X\Y Orientation Converter for Max
 ---------------------------------------------------
-X ORIENTATION: -0.923883
-Y ORIENTATION: -0.382674
+X ORIENTATION: -0.92388
+Y ORIENTATION: -0.382683
 ------------------- CONVERSION --------------------
-IN-GAME FACING (in °): 202.499
-MAX Z ORIENTATION (in °): 112.499
+IN-GAME FACING (in °): 202.5
+MAX Z ORIENTATION (in °): 112.5
 ===================================================
 ```
 
