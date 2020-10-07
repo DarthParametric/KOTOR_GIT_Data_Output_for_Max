@@ -1,5 +1,5 @@
 # KOTOR GIT Data Output for Max
-This is a simple script that will derive the relevant data from an object (or objects) in 3DS Max/GMax needed to be added to a KOTOR GIT when creating new static camera, placeable, or creature entries and output it to the Listener window. 
+This is a simple script that will derive the relevant data from an object (or objects) in 3DS Max/GMax needed to be added to a KOTOR GIT when creating new static camera, placeable, or creature entries and output it to the Listener window. Now expanded with some additional supplementary scripts.
 
 Instructions
 ============
@@ -65,8 +65,8 @@ Acknowledgements
 * Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100/2) by martinB.
 * Float rounding function taken from a [Scriptspot post](http://www.scriptspot.com/forums/3ds-max/general-scripting/printing-out-float-values-to-a-few-decimal-points) by Guessmyname.
 * Bad characters filter function taken from a [CG Society forum post](https://forums.cgsociety.org/t/limit-an-edit-box-to-integer-float-value/1299552/3) by thatoneguy.
+* Max version check idea taken from [KOTORMax](https://deadlystream.com/files/file/1151-kotormax/) by bead-v.
 * Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions and the Byzantine inner workings of the Odyssey engine.
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
 * Useful information regarding using trig functions to reverse-engineer Odyssey's X/Y Orientation values derived from [several posts by Vriff](https://deadlystream.com/topic/2901-gitedit-what-do-you-guys-want/?do=findComment&comment=29621) on Deadly Stream.
-* Max version check idea taken from [KOTORMax](https://deadlystream.com/files/file/1151-kotormax/) by bead-v.
