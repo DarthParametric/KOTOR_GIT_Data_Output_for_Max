@@ -43,7 +43,7 @@ If you would like to recreate creature or waypoint positioning inside Max using 
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
 
-Note that in Max the text fields are filtered to prevent the entry of extraneous characters, but this feature is disabled for GMax. Hit the OK button and the conversion results will be output to the Listener window. You should get an output something like the following:
+Note that in Max the text fields are filtered to prevent the entry of extraneous characters, but this feature is disabled for GMax. Hit the Convert button and the conversion results will be output to the Listener window. You should get an output something like the following:
 ```
 ===================================================
 KOTOR GIT X\Y Orientation Converter for Max
