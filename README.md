@@ -3,7 +3,9 @@ This is a simple script that will derive the relevant data from an object (or ob
 
 Instructions
 ============
+<p align="justify">
 Download the script and put it in your Scripts folder, or some other convenient location. In Max, select the object/s of interest, hit F11 to open the Listener window, then hit CTRL+R or go to File -> Run Script and select KOTOR_GIT_Data_Output_for_Max.ms and hit enter. You should get an output something like the following:
+</p>
 ```
 ===================================================
 Object data formatted for KOTOR GIT injection
@@ -24,7 +26,9 @@ X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ===================================================
 ```
+<p align="justify">
 If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object/s. It will skip any object with more than 10 verts (triggers typically only have 4 or 5 verts). You should get an output something like the following:
+</p>
 ```
 ===================================================
 Trigger data formatted for KOTOR GIT injection
@@ -38,12 +42,13 @@ Vert 3: -0.85827, 0.42217, 0.0
 Vert 4: 0.85827, 0.42217, 0.0
 ===================================================
 ```
-
+<p align="justify">
 If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run KOTOR_XY_Orientation_Converter.ms, as above. A pop-window will allow you to enter the values:
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
 
 Note that in Max the text fields are filtered to prevent the entry of extraneous characters, but this feature is disabled for GMax. Hit the Convert button and the conversion results will be output to the Listener window. You should get an output something like the following:
+</p>
 ```
 ===================================================
 KOTOR GIT X\Y Orientation Converter for Max
@@ -58,8 +63,9 @@ MAX Z ORIENTATION (in °): 112.5
 
 Notes
 ============
+<p align="justify">
 Several modules across both games, notably the Endar Spire's end_m01aa (Command Module) and end_m01ab (Starboard Section) in K1 and the Harbinger's 151HAR (Command Deck) and 152HAR (Crew Quarters) in TSL, rotate the in-game map differently than the majority of other modules. The game takes Max's East as 0°, thus requiring the addition of 90° to certain rotations. However, these modules rotate the in-game map so that in-game North no longer matches North in Max, while still taking Max East as 0°. Thus to face North in these modules would require something other than the typical 90° used in other modules. Generally this shouldn't pose an issue when working exclusively in Max, but users should be cognizant of it when testing in-game, especially when using player postioning/facing as a guide.
-
+</p>
 Acknowledgements
 ============
 * Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100/2) by martinB.
