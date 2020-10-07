@@ -24,7 +24,7 @@ X ORIENTATION ( COS(Z + 90°) ): -0.92388
 Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ===================================================
 ```
-If you also want to create triggers, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner. This will output the vertex offsets from the parent pivot for the selected object/s. It will skip any object with more than 10 verts (triggers typically only have 4 or 5 verts). You should get an output something like the following:
+If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object/s. It will skip any object with more than 10 verts (triggers typically only have 4 or 5 verts). You should get an output something like the following:
 ```
 ===================================================
 Trigger data formatted for KOTOR GIT injection
