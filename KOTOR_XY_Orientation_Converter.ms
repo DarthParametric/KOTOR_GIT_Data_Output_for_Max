@@ -80,24 +80,14 @@ rollout kOriPanel "KOTOR X/Y Orientation Converter" ( -- Create the orientation 
 					
 					local angDeg
 					
-					if inOriX > 0 and inOriY > 0 then -- Angle lies in Quadrant 1
-						(
-							angDeg = (asin inOriY)
-						)
-					if inOriX < 0 and inOriY > 0 then -- Angle lies in Quadrant 2
-						(
-							angDeg = 180 + (asin inOriY)
-						)
-					if inOriX < 0 and inOriY < 0 then -- Angle lies in Quadrant 3
-						(
-							angDeg = 180 - (asin inOriY)
-						)
-					if inOriX > 0 and inOriY < 0 then -- Angle lies in Quadrant 4
-						(
-							angDeg = 270 - (asin inOriY)
-						)
+					angDeg = (atan2 inOriY inOriX) -- Simplified calculation thanks to ndix UR.
 					
 					angDeg2 = angDeg - 90
+					
+					if angDeg2 < 0 and (angDeg2 + 360) < 180 then -- Rationalise adjusted Max angles under 180°
+						(
+							angDeg2 += 360
+						)
 					
 					format "===================================================\n"
 					format "KOTOR GIT X\Y Orientation Converter for Max\n"
