@@ -57,7 +57,7 @@ for obj in selection do (
 	format "-------------------- PLACEABLE --------------------\n"
 	format "BEARING (Z rotation in radians): %\n" zRads
 	format "-------------------- SCRIPTING --------------------\n"
-	format "FACING: (Z rotation + 90°): %\n" zRotKTR
+	format "Location(Vector(%,%,%), %)\n" (toMetres objPos.x) (toMetres objPos.y) (toMetres objPos.z) zRotKTR
 	format "-------------------- CREATURE ---------------------\n"
 	format "X ORIENTATION ( COS(Z + 90°) ): %\n" zCos
 	format "Y ORIENTATION ( SIN(Z + 90°) ): %\n" zSin
