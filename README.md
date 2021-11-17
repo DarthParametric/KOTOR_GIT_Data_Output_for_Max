@@ -40,7 +40,7 @@ Vert 4: 0.85827, 0.42217, 0.0
 ===================================================
 ```
 
-If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run KOTOR_GIT_Orientation_Converter.ms, as above. A pop-window will allow you to enter the values:
+If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run the KOTOR_GIT_Orientation_Converter.ms script, as above. A pop-window will allow you to enter the values:
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_XYOri_Converter.png?raw=true)
 
@@ -56,7 +56,7 @@ IN-GAME FACING (in °): 202.5
 MAX Z ORIENTATION (in °): 112.5
 ===================================================
 ```
-Additionally, this script now also converts the orientation field for static cameras, which defines the camera's Z rotation (X rotation is defined in the Pitch field, already in degrees):
+Additionally, this script now also converts the orientation field for static cameras, which defines the camera's Z rotation (X rotation is defined in the camera struct's Pitch field, already in degrees):
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_CamOri_Converter.png?raw=true)
 
@@ -80,7 +80,7 @@ Acknowledgements
 * Float rounding function taken from a [Scriptspot post](http://www.scriptspot.com/forums/3ds-max/general-scripting/printing-out-float-values-to-a-few-decimal-points) by Guessmyname.
 * Bad characters filter function taken from a [CG Society forum post](https://forums.cgsociety.org/t/limit-an-edit-box-to-integer-float-value/1299552/3) by thatoneguy.
 * Max version check idea taken from [KOTORMax](https://deadlystream.com/files/file/1151-kotormax/) by bead-v.
-* Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions and the Byzantine inner workings of the Odyssey engine. Also for providing a much simpler method of convertion X/Y orientations to Euler angles.
+* Thanks to ndix UR for various discussions regarding the arcane mysteries of quaternions and the Byzantine inner workings of the Odyssey engine. Also for providing a much simpler method of converting X/Y orientations to Euler angles.
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
 * Useful information regarding using trig functions to reverse-engineer Odyssey's X/Y Orientation values derived from [several posts by Vriff](https://deadlystream.com/topic/2901-gitedit-what-do-you-guys-want/?do=findComment&comment=29621) on Deadly Stream.
