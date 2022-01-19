@@ -74,6 +74,8 @@ MAX Z ORIENTATION (in °): 83.9999
 ===================================================
 ```
 
+There is now also a streamlined location output script, KOTOR_Location_Output.ms, that strips out all extraneous formatting, intended for direct copying and pasting into NSS scripts.
+
 Acknowledgements
 ============
 * Unit conversion function taken from a [CG Society forum post](https://forums.cgsociety.org/t/get-vertex-position-by-coordinate-and-format-the-string/1836100/2) by martinB.
