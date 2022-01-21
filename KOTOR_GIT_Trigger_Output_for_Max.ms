@@ -27,7 +27,8 @@ fn roundFloat val dp = (
 -- This is the maximum number of vertices in an object that the script will address. Objects with a higher vert count will be skipped. Adjust as needed but use high values at your own risk.
 global vertLimit = 15
 
-for obj in selection do (
+-- Account for multiple selected objects.
+for obj in (selection as array) do (
 	
 	-- Add a prefix to the selected object's name for use in the next step.
 	newObject = "shape_"+obj.name
