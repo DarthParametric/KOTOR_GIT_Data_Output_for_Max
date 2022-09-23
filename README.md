@@ -25,7 +25,7 @@ Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ===================================================
 ```
 
-If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object. It will skip any object with more than 15 verts (triggers typically only need 4-6 verts). In order to reorder the vertices sequentially, it will recreate the object, so make sure the object is a 2D plane. You should get an output something like the following:
+If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object. It will skip any object with more than 15 verts (triggers typically only need 4-6 verts). In order to reorder the vertices sequentially, it will recreate the object, so make sure the object is a 2D plane. Note that correct vertex order only seems possible to derive with convex shapes. Concave shapes (for example, a U shape) will return an incorrect vert order. You should get an output something like the following:
 ```
 ===================================================
 Trigger data formatted for KOTOR GIT injection
@@ -86,3 +86,4 @@ Acknowledgements
 * Origin of the script idea thanks to conversations with Kexikus and JCarter426 on the Deadly Stream Discord.
 * Extension of the script from static camera values to also include placeable and creature data thanks to conversations with ebmar/Seth on the Deadly Stream Discord.
 * Useful information regarding using trig functions to reverse-engineer Odyssey's X/Y Orientation values derived from [several posts by Vriff](https://deadlystream.com/topic/2901-gitedit-what-do-you-guys-want/?do=findComment&comment=29621) on Deadly Stream.
+* A revised approach to determining trigger object vertex order supplied by JCarter426 on the Deadly Stream Discord.
