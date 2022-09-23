@@ -16,16 +16,9 @@ scaleFactor = units.decodeValue "1m" -- This many system units make up one metre
 unitVal/scaleFactor 
 )
 
--- Add a single notice block about module map orientation at output start rather than spamming it in every object sub-block.
-	format "===================================================\n"
-	format "--------------------- NOTICE ----------------------\n"
-	format "N.B.: Some modules rotate the in-game map so that\n"
-	format "north doesn't match Max's north, as is usually the\n"
-	format "case. Trying to determine the required orientation\n"
-	format "in-game may result in some confusion in these cases.\n"
-	format "Refer to the readme for further details.\n"
-	format "===================================================\n"
-	format "\n"
+-- Determine what version of Max is being using. The primary interest is whether it is GMax (v4200), since that errors out on the formattedPrint function.
+-- Version check idea taken from KOTORMax by bead-v, https://deadlystream.com/files/file/1151-kotormax/
+maxCheckDP = (maxversion())[1]
 
 for obj in selection do (
 	
@@ -45,6 +38,23 @@ for obj in selection do (
 	objzRot = eulerAngles 0 0 zRot2 -- Create a dummy rotation with zeroed out X and Y values for deriving the camera quat.
 	objzRot2 = objzRot as quat -- Convert dummy rotation to a quaternion.
 	
+	if maxCheckDP > 4200 then
+		(
+			-- Round scripting output values to 2 decimal places since that is enough precision for typical use.
+			scriptx = formattedPrint (toMetres objPos.x) format:".2f"
+			scripty = formattedPrint (toMetres objPos.y) format:".2f"
+			scriptz = formattedPrint (toMetres objPos.z) format:".2f"
+			scriptrot = formattedPrint zRotKTR format:".2f"
+		)
+		else
+			(
+				-- GMax lacks the formattedPrint function, so skip it to prevent the script breaking.
+				scriptx = toMetres objPos.x
+				scripty = toMetres objPos.y
+				scriptz = toMetres objPos.z
+				scriptrot = zRotKTR
+			)
+	
 	format "===================================================\n"
 	format "Object data formatted for KOTOR GIT injection\n"
 	format "--------------------- GENERIC ---------------------\n"
@@ -57,7 +67,8 @@ for obj in selection do (
 	format "-------------------- PLACEABLE --------------------\n"
 	format "BEARING (Z rotation in radians): %\n" zRads
 	format "-------------------- SCRIPTING --------------------\n"
-	format "Location(Vector(%,%,%), %)\n" (toMetres objPos.x) (toMetres objPos.y) (toMetres objPos.z) zRotKTR
+	--format "FACING: (Z rotation + 90°): %\n" zRotKTR
+	format "location l% = Location(Vector(%,%,%), %);\n" objName scriptx scripty scriptz scriptrot
 	format "-------------------- CREATURE ---------------------\n"
 	format "X ORIENTATION ( COS(Z + 90°) ): %\n" zCos
 	format "Y ORIENTATION ( SIN(Z + 90°) ): %\n" zSin
