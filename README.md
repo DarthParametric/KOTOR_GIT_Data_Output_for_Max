@@ -26,19 +26,8 @@ Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ```
 
 If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object. It will skip any object with more than 15 verts (triggers typically only need 4-6 verts). In order to reorder the vertices sequentially, it will recreate the object, so make sure the object is a 2D plane. Note that correct vertex order only seems possible to derive with convex shapes. Concave shapes (for example, a U shape) will return an incorrect vert order. You should get an output something like the following:
-```
-===================================================
-Trigger data formatted for KOTOR GIT injection
----------------------------------------------------
-SELECTED OBJECT: Trigger01
-POSITION (in metres): -1.45, 3.85, 2.0
------------------ VERTEX OFFSETS ------------------
-Vert 1: -0.85827, -0.42217, 0.0
-Vert 2: 0.85827, -0.42217, 0.0
-Vert 3: -0.85827, 0.42217, 0.0
-Vert 4: 0.85827, 0.42217, 0.0
-===================================================
-```
+
+![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_Trigger_Example.png?raw=true)
 
 If you would like to recreate creature or waypoint positioning inside Max using data from a module's GIT, a third script now converts from X/Y Orientation to a Z rotation in degrees. Download and run the KOTOR_GIT_Orientation_Converter.ms script, as above. A pop-window will allow you to enter the values:
 
