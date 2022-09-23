@@ -46,7 +46,7 @@ rollout kOriPanel "KOTOR Creature X/Y Orientation Converter" ( -- Create the ori
 	
 	on fieldXOri changed t do
 		(
-			if maxCheckDP > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max
+			if maxCheckDP > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max.
 				(
 					fieldXOri.text = filterNumbers t -- Prevent non-numerical values being entered into the textbox.
 				)
@@ -114,11 +114,11 @@ rollout KCamRotConvert "KOTOR Static Camera Orientation Converter" ( -- Create t
 	
 	on fieldCamWOri changed t do
 		(
-			-- These values are always zero, since the quat is only a Z rotation
-			fieldCamXOri.text = "0"
-			fieldCamYOri.text = "0"
+			-- The X and Y values are always zero, since the quat is only used for Z rotation.
+			fieldCamXOri.text = "0.0"
+			fieldCamYOri.text = "0.0"
 			
-			if maxCheckDP > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max
+			if maxCheckDP > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max.
 				(
 					fieldCamWOri.text = filterNumbers t -- Prevent non-numerical values being entered into the textbox.
 				)
@@ -126,8 +126,8 @@ rollout KCamRotConvert "KOTOR Static Camera Orientation Converter" ( -- Create t
 	
 	on fieldCamZOri changed t do
 		(
-			fieldCamXOri.text = "0"
-			fieldCamYOri.text = "0"
+			fieldCamXOri.text = "0.0"
+			fieldCamYOri.text = "0.0"
 			
 			if maxCheckDP > 4200 then
 				(
@@ -147,25 +147,24 @@ rollout KCamRotConvert "KOTOR Static Camera Orientation Converter" ( -- Create t
 					
 					local rotQuatCam
 					
-					rotQuatCam = quat 0 0 inCamZOri inCamWOri
+					rotQuatCam = quat 0 0 inCamZOri inCamWOri -- Reconstruct the quat in Max-friendly XYZW format.
 					
 					local rotDegCam
 					
-					rotDegCam = quatToEuler rotQuatCam
+					rotDegCam = quatToEuler rotQuatCam -- Convert the quat to Euler angles.
 					
-					zCamRot = rotDegCam.Z
+					zCamRot = rotDegCam.Z -- Grab the Z rotation, since X and Y are zero.
 					
 					local zCamRot2
 					
 					if zCamRot < 0 then zCamRot2 = abs zCamRot else zCamRot2 = 0 - zCamRot -- To account for apparent sign flipping.
 					
-					
 					format "===================================================\n"
 					format "KOTOR Static Camera Orientation Converter for Max\n"
 					format "---------------------------------------------------\n"
 					format "W: %\n" inCamWOri
-					format "X: 0\n"
-					format "Y: 0\n"
+					format "X: 0.0\n"
+					format "Y: 0.0\n"
 					format "Z: %\n" inCamZOri
 					format "------------------- CONVERSION --------------------\n"
 					format "MAX Z ORIENTATION (in °): %\n" zCamRot2
@@ -173,8 +172,8 @@ rollout KCamRotConvert "KOTOR Static Camera Orientation Converter" ( -- Create t
 					format "\n"
 					
 					fieldCamWOri.text = "" -- Once the conversion is done, clear the text fields so a fresh set of values can be entered.
-					fieldCamXOri.text = "0"
-					fieldCamYOri.text = "0"
+					fieldCamXOri.text = "0.0"
+					fieldCamYOri.text = "0.0"
 					fieldCamZOri.text = ""
 				)
 		)
