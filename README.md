@@ -25,7 +25,7 @@ Y ORIENTATION ( SIN(Z + 90°) ): -0.382683
 ===================================================
 ```
 
-If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object. It will skip any object with more than 15 verts (triggers typically only need 4-6 verts). In order to reorder the vertices sequentially, it will recreate the object, so make sure the object is a 2D plane. Note that correct vertex order only seems possible to derive with convex shapes. Concave shapes (for example, a U shape) will return an incorrect vert order. You should get an output something like the following:
+If you also need to derive the geometry struct values to create a new GIT trigger entry, download the second script, KOTOR_GIT_Trigger_Output_for_Max.ms and use in the same manner as above. This will output the vertex offsets from the parent pivot for the selected object. It will skip any object with more than 10 verts (triggers typically only need 4-6 verts), but this can be adjusted by editing the `vertLimit` variable in the script. In order to reorder the vertices sequentially, it will create a temporary duplicate of the object, so make sure the object is a 2D plane. Note that correct vertex order only seems possible to derive with convex shapes. Concave shapes (for example, a U shape) will return an incorrect vert order. You should get an output something like the following:
 
 ![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_Trigger_Example.png?raw=true)
 
