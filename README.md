@@ -62,6 +62,20 @@ Z: 0.66913
 MAX Z ORIENTATION (in °): 83.9999
 ===================================================
 ```
+This script now also has provision to convert placeable bearing (in radians) to degrees:
+
+![](https://github.com/DarthParametric/KOTOR_GIT_Data_Output_for_Max/blob/main/img/GIT_Bearing_Converter.png?raw=true)
+
+Note that in Max the text field is filtered to prevent the entry of extraneous characters, but this feature is disabled for GMax. Hit the Convert button and the conversion result will be output to the Listener window. You should get an output something like the following:
+```
+===================================================
+KOTOR Bearing Converter for Max
+---------------------------------------------------
+BEARING: -0.945096
+------------------- CONVERSION --------------------
+MAX Z ORIENTATION (in °): -54.15
+===================================================
+```
 
 There is now also a streamlined location output script, KOTOR_Location_Output.ms, that strips out all extraneous formatting, intended for direct copying and pasting into NSS scripts.
 
