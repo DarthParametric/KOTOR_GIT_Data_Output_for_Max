@@ -1,11 +1,11 @@
 /***==================================================================================
 	KOTOR GIT Orientation Converter for Max
 	
-	A script for Max/GMax that will take a user-entered	creature X/Y orientation
-	or static camera quaternion from a KOTOR GIT file and convert it into a	valid
-	Euler Z axis orientation for use in 3DSMax or GMax.
+	A script for Max/GMax that will take a user-entered	creature X/Y orientation,
+	a static camera quaternion, or a placeable bearing from a KOTOR GIT file and
+	convert it into a valid Euler Z axis orientation for use in 3DSMax or GMax.
 	
-	DP 2020-10-07 / 2021-11-17
+	DP 2020-10-07 / 2021-11-17 / 2022-10-06
 ==================================================================================***/
 
 try (closerolloutfloater convFloat)catch() -- Check for an existing instance of the floater.
@@ -35,7 +35,7 @@ fn FilterNumbers t = (
 -- Version check idea taken from KOTORMax by bead-v, https://deadlystream.com/files/file/1151-kotormax/
 maxCheckDP = (maxversion())[1]
 
-convFloat = newRolloutFloater "GIT Orientation Converter" 300 365 -- Declare the floater variable first to prevent Max throwing an undeclared error when hitting the close button the first time the script runs.
+convFloat = newRolloutFloater "GIT Orientation Converter" 300 460 -- Declare the floater variable first to prevent Max throwing an undeclared error when hitting the close button the first time the script runs.
 
 rollout kOriPanel "KOTOR Creature X/Y Orientation Converter" ( -- Create the orientation entry rollout.
 	
@@ -184,5 +184,50 @@ rollout KCamRotConvert "KOTOR Static Camera Orientation Converter" ( -- Create t
 		)
 )
 
+rollout KRadiansToDegrees "KOTOR Bearing Converter" ( -- Create the radians to degrees conversion entry rollout.
+
+	edittext fieldRadIn "Bearing:" labelOnTop:true
+	button btConvertRad "Convert" align:#left offset:[60,0] width:50
+	button btCloseRad "Close" align:#right offset:[-60,-26.5] width:50
+
+	on fieldRadIn changed t do
+		(
+			
+			if maxCheckDP > 4200 then -- Since GMax freaks out about the bad character filter, only use on Max.
+				(
+					fieldRadIn.text = filterNumbers t -- Prevent non-numerical values being entered into the textbox.
+				)
+		)
+
+	on btConvertRad pressed do -- Convert button action.
+		(
+			strRadIn = fieldRadIn.text
+			
+			if strRadIn.count > 0 then -- Safety check to only process the button click if the field contains data.
+				(
+					inRads = strRadIn as float -- Convert the user-entered value into a float.
+					
+					zDeg = radToDeg inRads -- Convert radians to degrees.
+					
+					format "===================================================\n"
+					format "KOTOR Bearing Converter for Max\n"
+					format "---------------------------------------------------\n"
+					format "BEARING: %\n" inRads
+					format "------------------- CONVERSION --------------------\n"
+					format "MAX Z ORIENTATION (in °): %\n" zDeg
+					format "===================================================\n"
+					format "\n"
+					
+					fieldRadIn.text = "" -- Once the conversion is done, clear the text field so a fresh value can be entered.
+				)
+		)
+
+	on btCloseRad pressed do -- Close button action.
+		(
+			if convFloat != undefined then closerolloutfloater convFloat -- Close the parent pop-up dialogue.
+		)
+)
+
 addRollout kOriPanel convFloat
 addRollout KCamRotConvert convFloat
+addRollout KRadiansToDegrees convFloat
